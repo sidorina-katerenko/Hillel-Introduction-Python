@@ -6,14 +6,21 @@
 # Сколько всего нужно закупить парт чтобы их хватило на всех учеников?
 # Программа получает на вход три натуральных числа: количество учащихся в каждом из трех классов.
 
+import math
+
+# не использовала round, т.к. в Python 3 используется банковское округление
+
 A = int(input('Количество учеников в классе А: '))
 B = int(input('Количество учеников в классе Б: '))
 C = int(input('Количество учеников в классе В: '))
 
-desksInAClass = (A // 2) if A % 2 == 0 else (A // 2 + 1)
+desksInAClass = math.ceil(A / 2)
+# if A % 2 == 0 else (A // 2 + 1)
 
-desksInBClass = (B // 2) if B % 2 == 0 else (B // 2 + 1)
+desksInBClass = math.ceil(B / 2)
+# if B % 2 == 0 else (B // 2 + 1)
 
-desksInCClass = (C // 2) if C % 2 == 0 else (C // 2 + 1)
+desksInCClass = math.ceil(C / 2)
+# if C % 2 == 0 else (C // 2 + 1)
 
-print('Нужно закупить', desksInAClass + desksInBClass + desksInCClass, 'парт')
+print('Нужно закупить {} парт'.format(desksInAClass + desksInBClass + desksInCClass))

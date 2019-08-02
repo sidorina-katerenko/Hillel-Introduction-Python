@@ -3,4 +3,4 @@
 
 N = input('Enter your name: ')
 
-print('Hello ', N, '!', sep='')
+print('Hello, {}!'.format(N))
