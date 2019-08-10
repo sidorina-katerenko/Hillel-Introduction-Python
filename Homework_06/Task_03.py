@@ -20,16 +20,9 @@ print(lst)
 k = int(input('Введите индекс k (от 0 до 9): '))
 print('Число с индексом k равняется', lst[k])
 
-for i in range(k + 1, len(lst)):
-    lst.insert(k, lst[-1])
-    lst.pop()
+for i in range(k, len(lst)):
+    if i < len(lst) - 1:
+        lst[i] = lst[i + 1]
+
 lst.pop()
 print(lst)
-
-# Второй вариант решения:
-# for i in range(k, len(lst)):
-#     if i < len(lst) - 1:
-#         lst[i] = lst[i + 1]
-#
-# lst.pop()
-# print(lst)
